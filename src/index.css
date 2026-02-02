@@ -1,0 +1,218 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: #0B2434;
+  padding: 50px;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+div#root {
+  height: 100%;
+  width: 100%;
+  max-height: 900px;
+  max-width: 900px;
+}
+
+main {
+  height: 100%;
+  background-color: #F5F5F5;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  gap: 30px;
+  padding: 33px 61px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Top Texts */
+.top-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.top-texts__line {
+  display: flex;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 15px;
+}
+
+.top-texts__title {
+  font: 700 3.5rem / 1 'Karla', sans-serif;
+  color: #2B283A;
+  letter-spacing: -0.03em;
+}
+
+.top-texts__instructions {
+  font: 400 1.7rem / 1 'Karla', sans-serif;
+  color: #4A4E74;
+  letter-spacing: -0.03em;
+  text-align: center;
+}
+
+/* Dices Box */
+.dice-container {
+  width: 100%;
+  height: max-content;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 18px;
+}
+
+/* Single Die */
+.single-die {
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 10px;
+  background-color: #ffffff;
+  border: 0;
+  box-shadow: 0px 2px 2px 0px #00000026;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  padding: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.single-die.held {
+  background-color: #59E391;
+}
+
+.pip {
+  width: 20px;
+  height: 20px;
+  background-color: #2B283A;
+  border-radius: 50%;
+  justify-self: center;
+  align-self: center;
+}
+
+.pip-1 { grid-area: 1 / 1; }
+.pip-2 { grid-area: 1 / 2; }
+.pip-3 { grid-area: 1 / 3; }
+.pip-4 { grid-area: 2 / 1; }
+.pip-5 { grid-area: 2 / 2; }
+.pip-6 { grid-area: 2 / 3; }
+.pip-7 { grid-area: 3 / 1; }
+.pip-8 { grid-area: 3 / 2; }
+.pip-9 { grid-area: 3 / 3; }
+
+/* Roll Button */
+.roll-button {
+  height: 80px;
+  min-height: 80px;
+  width: 100%;
+  max-width: 300px;
+  background-color: #5035FF;
+  border-radius: 8px;
+  border: 0;
+  font: 700 2rem / 1 'Karla', sans-serif;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all .4s ease;
+}
+
+.roll-button:hover {
+  background-color: #5035FFCE;
+}
+
+@media (max-height: 730px) {
+  main {
+    gap: 20px;
+  }
+
+  .top-texts__title {
+    font-size: 3rem;
+  }
+
+  .top-texts__instructions {
+    font-size: 1.2rem;
+  }
+
+  .dice-container {
+    width: 80%;
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  .single-die {
+    padding: 15px;
+  }
+}
+
+@media (max-width: 1024px) {
+  main {
+    padding: 33px;
+  }
+
+  .top-texts__title {
+    font-size: 2.5rem;
+  }
+
+  .top-texts__image {
+    width: 40px;
+    height: 40px;
+  }
+
+  .top-texts__instructions {
+    font-size: 1.3rem;
+  }
+
+  .dice-container {
+    max-width: 600px;
+  }
+
+  .single-die {
+    padding: 15px;
+  }
+
+  .roll-button {
+    height: 60px;
+    min-height: 60px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    height: auto;
+  }
+
+  main {
+    height: auto;
+  }
+
+  .dice-container {
+    width: max-content;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .single-die {
+    gap: 4px;
+  }
+}
