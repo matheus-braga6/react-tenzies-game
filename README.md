@@ -2,6 +2,8 @@
 
 A simple and interactive dice game built with React.
 
+🔗 **Live Demo:** https://matheus-braga6.github.io/react-tenzies-game/
+
 ## 📚 About the project
 
 This project was developed as part of the **Learn React** course by Scrimba.
